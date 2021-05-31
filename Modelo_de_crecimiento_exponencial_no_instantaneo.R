@@ -7,7 +7,7 @@ Porcentaje_de_crecimiento = 0.20
 # Introduzca el tiempo al que se desea calcular el crecimiento
 tiempo = 0:50
 
-
+Exponencial_NI <- function(P0, r, t){P0 * (1 + r)^t}
 
 Bacterias = Exponencial_NI(Poblacion_inicial, Porcentaje_de_crecimiento, tiempo)
 
