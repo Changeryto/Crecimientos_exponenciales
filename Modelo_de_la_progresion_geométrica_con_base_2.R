@@ -3,6 +3,8 @@ N_de_este_modelo <- function(N0, t, g){
   N0 * 2^(t/g)
 }
 
+#############################--Gráfica--#########################################################
+
 # Introduzca el número de células iniciales
 N0 = 100
 
@@ -37,3 +39,28 @@ abline(v=seq(0, 24, by=2), col="lightgrey", lty="dashed", lwd=2,
 
 # Edite la leyenda
 legend("bottomright",legend=expression("Crecimiento de"~italic("E. coli")), col="red3", bty="l", lwd=2)
+
+
+
+#############################--Sustituciones--#########################################################
+
+
+N_con_tiempo_generacion = function(N0, t, g){
+  N0 * 2^(t / g)
+}
+
+Generaciones = function(N, N0){
+  (log10(N) - log10(N0))/(log10(2))
+}
+
+N_con_num_generaciones = function(N0, n){
+  N0 * 2^n
+}
+
+Tiempo_de_generacion = function(t, N, N0){
+ t / (Generaciones(N, N0) )
+}
+
+Tiempo_transcurrido = function(N, N0, g){
+  ( (log10(N) - log10(N0)) / log10(2) ) * g
+}
